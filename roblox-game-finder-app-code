@@ -1,4 +1,4 @@
-//creating the three variables needed to store user inputs
+//creating the three variables needed to store user inputs 
 var genre;
 var age;
   
