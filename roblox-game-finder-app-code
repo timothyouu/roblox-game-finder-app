@@ -1,0 +1,57 @@
+//creating the three variables needed to store user inputs
+var genre;
+var age;
+  
+//when an input is made for the genre drop down it will call the updateScreen funcation and run the code in the function
+onEvent("genreDropDown", "input", function( ) {
+  updateScreen();
+});
+
+//when an input is made for the age drop down it will call the updateScreen funcation and run the code in the function
+onEvent("ageDropDown", "input", function( ) {
+  updateScreen();
+});
+
+function updateScreen(){
+  //updates the genre and age variable to user input for the drop down
+  genre = getText("genreDropDown");
+  age = getText("ageDropDown");
+  
+  //plays click sound when user inputs their choice
+  playSound("sound://category_app/app_button_3.mp3", false);
+  
+  //updates the resultText and image that displays the game recommendation using their input
+  if (genre=="Action" && age>=9) {
+    setText("resultText", "Hello Robloxian, you want a game with the genre, " + genre + ", and you are " + age + " years old. I suggest playing Arsenal!");
+    setImageURL("gameImage", "Arsenal.jpeg");
+
+  } else if (genre=="Action" && age<=9) {
+    setText("resultText", "Hello Robloxian, you want a game with the genre, " + genre + ", and you are " + age + " years old. I suggest playing Big Paintball 2!");
+    setImageURL("gameImage", "Big-Paintball-2!.png");
+    
+  } else if (genre=="Roleplay" && age>=13) {
+    setText("resultText", "Hello Robloxian, you want a game with the genre, " + genre + ", and you are " + age + " years old. I suggest playing Dahood!");
+    setImageURL("gameImage", "Dahood.png");
+    
+  } else if (genre=="Roleplay" && age<=13) {
+    setText("resultText", "Hello Robloxian, you want a game with the genre, " + genre + ", and you are " + age + " years old. I suggest playing Adopt Me!");
+    setImageURL("gameImage", "Adopt-Me!.jpg");
+    
+  } else if (genre=="Simulator" && age>=9) {
+    setText("resultText", "Hello Robloxian, you want a game with the genre, " + genre + ", and you are " + age + " years old. I suggest playing Destruction Simulator!");
+    setImageURL("gameImage", "Destruction-Simulator.jpg");
+    
+  } else {
+    setText("resultText", "Hello Robloxian, you want a game with the genre, " + genre + ", and you are " + age + " years old. I suggest playing Pet Simulator X!");
+    setImageURL("gameImage", "Pet-Simulator-X!.png");
+  }
+}
+
+//credits
+//image:
+//Arsenal - https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pocketgamer.com%2Froblox%2Farsenal-codes%2F&psig=AOvVaw1I5OYl7naqPGQYfYn7FRfa&ust=1699060497008000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCNjS-uDTpoIDFQAAAAAdAAAAABAH
+//Big Paintball 2! - https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rolimons.com%2Fgame%2F9865958871&psig=AOvVaw10ZxadtAMLskw5x1zyMVoS&ust=1699060629950000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKil76LUpoIDFQAAAAAdAAAAABAD
+//Dahood - https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.roblox.com%2Fgames%2F2788229376%2FDa-Hood&psig=AOvVaw1u8zgyPDz0HqmPRtAHfAR-&ust=1699060712292000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCOC0ysvUpoIDFQAAAAAdAAAAABAI
+//Adopt Me! - https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DvT1PEVSPH3U&psig=AOvVaw3fm84c-ud9N_qFa78E67mb&ust=1699060774239000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCLixvOTUpoIDFQAAAAAdAAAAABAk
+//Destruction Simulator - https://www.google.com/url?sa=i&url=https%3A%2F%2Fthenerdstash.com%2Froblox-destruction-simulator-codes-april-2023%2F&psig=AOvVaw0YllW2iEOHkMeJ-gEVs9nU&ust=1699060866827000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCKDSgJHVpoIDFQAAAAAdAAAAABAW
+//Pet Simulator X! - https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.roblox.com%2Fgames%2F6284583030%2FPet-Simulator-X&psig=AOvVaw3RbkIq5oxIYNmWtUG7z1Eh&ust=1699060929646000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCPiA-q_VpoIDFQAAAAAdAAAAABAD
